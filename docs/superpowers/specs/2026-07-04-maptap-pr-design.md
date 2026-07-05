@@ -90,15 +90,23 @@ export const LOCATIONS: GameLocation[];
   Cristóbal, La Fortaleza, Observatorio de Arecibo, El Yunque, Cerro de Punta,
   the offshore islands Mona/Culebra/Vieques/Desecheo/Caja de Muertos, Playa
   Flamenco, Bahía Mosquito, Camuy caves, Bacardí, etc.).
-- **16 barrios** — curated approximate neighborhood centroids (Viejo San Juan,
-  Santurce, Río Piedras, Condado, Isla Verde, Hato Rey, Piñones, Guavate, La
-  Perla, Boquerón, …). Approximate by nature; flagged in the data comments.
+- **16 barrios** — curated neighborhood centroids (Viejo San Juan, Santurce,
+  Río Piedras, Condado, Isla Verde, Hato Rey, Piñones, Guavate, La Perla,
+  Boquerón, …). Six (Río Piedras, Condado, Miramar, Ocean Park, Puerta de
+  Tierra, Barrio Obrero) use authoritative 2025 Census subbarrio internal
+  points (`tl_2025_72_subbarrio`); the remainder are approximate and flagged in
+  the data comments.
 
 **Sources:** GeoNames PR export (`download.geonames.org/export/dump/PR.zip`)
 for municipio seats and geographic features; hand-curation for landmarks and
-barrios. Barrio coordinates are the weakest link and are the first thing to
-harden in a later pass (TIGER/Line county-subdivision + subbarrio shapefiles
-are the authoritative upgrade path).
+barrios (6 later hardened from the 2025 Census `subbarrio` layer). The
+remaining approximate barrios are the weakest link and the first thing to harden
+in a later pass. The authoritative upgrade path is the TIGER/Line
+**county-subdivision (`cousub`)** layer — all ~900 barrios island-wide with
+Census centroids — plus the **Place** layer for CDPs (Isla Verde, Levittown).
+The `subbarrio` layer only covers 23 municipios' urban cores (mostly generic
+"Pueblo Norte/Sur" names), so it hardened only the 6 San Juan barrios that
+matched by name.
 
 ## Architecture / Components
 

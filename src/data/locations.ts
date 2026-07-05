@@ -1,7 +1,9 @@
 // Puerto Rico location dataset — vetted coordinates.
 // municipios: GeoNames PPLA town-seat points (authoritative).
 // landmarks: curated, verified coordinates.
-// barrios: curated approximate neighborhood centroids (fuzzy by nature).
+// barrios: curated centroids; 6 (Río Piedras, Condado, Miramar, Ocean Park,
+//   Puerta de Tierra, Barrio Obrero) use authoritative 2025 Census subbarrio
+//   internal points; the rest are approximate (fuzzy by nature).
 export type Category = 'municipio' | 'landmark' | 'barrio';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 export interface GameLocation {
@@ -120,18 +122,18 @@ export const LOCATIONS: GameLocation[] = [
   { id: 104, name: "Faro de Punta Tuna", category: 'landmark', difficulty: 'hard', lat: 17.98772, lng: -65.88476 },
   { id: 105, name: "Viejo San Juan", category: 'barrio', difficulty: 'easy', lat: 18.4655, lng: -66.1163 },
   { id: 106, name: "Santurce", category: 'barrio', difficulty: 'medium', lat: 18.4496, lng: -66.0755 },
-  { id: 107, name: "Río Piedras", category: 'barrio', difficulty: 'medium', lat: 18.3997, lng: -66.0505 },
-  { id: 108, name: "Condado", category: 'barrio', difficulty: 'medium', lat: 18.45439, lng: -66.07072 },
+  { id: 107, name: "Río Piedras", category: 'barrio', difficulty: 'medium', lat: 18.39982, lng: -66.04994 },
+  { id: 108, name: "Condado", category: 'barrio', difficulty: 'medium', lat: 18.45928, lng: -66.07701 },
   { id: 109, name: "Isla Verde", category: 'barrio', difficulty: 'medium', lat: 18.4489, lng: -65.999 },
   { id: 110, name: "Hato Rey", category: 'barrio', difficulty: 'medium', lat: 18.4211, lng: -66.0577 },
-  { id: 111, name: "Miramar", category: 'barrio', difficulty: 'hard', lat: 18.4471, lng: -66.0847 },
-  { id: 112, name: "Ocean Park", category: 'barrio', difficulty: 'hard', lat: 18.4553, lng: -66.0602 },
-  { id: 113, name: "Puerta de Tierra", category: 'barrio', difficulty: 'hard', lat: 18.4646, lng: -66.0937 },
+  { id: 111, name: "Miramar", category: 'barrio', difficulty: 'hard', lat: 18.45456, lng: -66.08239 },
+  { id: 112, name: "Ocean Park", category: 'barrio', difficulty: 'hard', lat: 18.46463, lng: -66.04459 },
+  { id: 113, name: "Puerta de Tierra", category: 'barrio', difficulty: 'hard', lat: 18.46531, lng: -66.0962 },
   { id: 114, name: "La Perla", category: 'barrio', difficulty: 'hard', lat: 18.4713, lng: -66.1146 },
   { id: 115, name: "Levittown", category: 'barrio', difficulty: 'medium', lat: 18.4497, lng: -66.1836 },
   { id: 116, name: "Piñones", category: 'barrio', difficulty: 'medium', lat: 18.439, lng: -65.9636 },
   { id: 117, name: "Guavate", category: 'barrio', difficulty: 'hard', lat: 18.1275, lng: -66.1069 },
   { id: 118, name: "Boquerón", category: 'barrio', difficulty: 'medium', lat: 18.0296, lng: -67.1668 },
   { id: 119, name: "Playa de Ponce", category: 'barrio', difficulty: 'hard', lat: 17.976, lng: -66.6152 },
-  { id: 120, name: "Barrio Obrero", category: 'barrio', difficulty: 'hard', lat: 18.4436, lng: -66.047 },
+  { id: 120, name: "Barrio Obrero", category: 'barrio', difficulty: 'hard', lat: 18.43487, lng: -66.05211 },
 ];
